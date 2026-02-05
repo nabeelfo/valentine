@@ -1,20 +1,36 @@
 /* style.css */
+:root {
+  --bg1: #ffe0ea;
+  --bg2: #ffffff;
+  --card-bg: #ffffff;
+  --text: #111111;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --yes: #ff2d55;
+  --no: #111111;
+  --ring: rgba(255, 45, 85, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ffe0ea, #ffffff);
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
 }
 
 .card {
   width: min(520px, 92vw);
-  background: white;
+  background: var(--card-bg);
   padding: 28px 22px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px var(--shadow);
 }
 
 h1 {
@@ -41,16 +57,23 @@ button {
   border-radius: 999px;
   border: none;
   cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 #yesBtn {
-  background: #ff2d55;
-  color: white;
+  background: var(--yes);
+  color: #ffffff;
 }
 
 #noBtn {
-  background: #111;
-  color: white;
+  background: var(--no);
+  color: #ffffff;
+  transition: left 0.2s ease, top 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .hint {
@@ -64,21 +87,22 @@ button {
   width: min(360px, 86vw);
   padding: 12px 14px;
   border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 16px;
   outline: none;
 }
 
 .nameInput:focus {
-  border-color: rgba(255,45,85,0.6);
+  border-color: var(--yes);
+  box-shadow: 0 0 0 3px var(--ring);
 }
 
 .linkBtn {
   display: inline-block;
   padding: 12px 18px;
   border-radius: 999px;
-  background: #ff2d55;
-  color: white;
+  background: var(--yes);
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -89,4 +113,14 @@ button {
 .emoji {
   font-size: 42px;
   margin: 10px 0;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 24px 18px;
+  }
 }

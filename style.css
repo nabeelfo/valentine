@@ -1,0 +1,92 @@
+/* style.css */
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe0ea, #ffffff);
+}
+
+.card {
+  width: min(520px, 92vw);
+  background: white;
+  padding: 28px 22px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+
+.sub {
+  margin: 0 0 18px;
+  opacity: 0.8;
+}
+
+.buttons {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #ff2d55;
+  color: white;
+}
+
+#noBtn {
+  background: #111;
+  color: white;
+}
+
+.hint {
+  margin-top: 16px;
+  font-size: 13px;
+  opacity: 0.7;
+  min-height: 18px;
+}
+
+.nameInput {
+  width: min(360px, 86vw);
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-size: 16px;
+  outline: none;
+}
+
+.nameInput:focus {
+  border-color: rgba(255,45,85,0.6);
+}
+
+.linkBtn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #ff2d55;
+  color: white;
+  text-decoration: none;
+}
+
+.big {
+  margin-top: 10px;
+}
+
+.emoji {
+  font-size: 42px;
+  margin: 10px 0;
+}

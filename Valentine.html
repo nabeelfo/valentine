@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Be My Valentine?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1 id="questionText">Will you be my Valentine? 💘</h1>
+    <p class="sub">Be honest… but choose wisely 😭</p>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <p class="hint" id="hintText"> don't try clicking  “No” 😈</p>
+  </div>
+
+  <script>
+    const name = localStorage.getItem("valentineName");
+    const safeName = name ? name.trim() : "";
+    const questionText = document.getElementById("questionText");
+
+    if (safeName) {
+      questionText.textContent = "Will you be my Valentine, " + safeName + "? 💘";
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

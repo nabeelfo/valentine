@@ -1,0 +1,46 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One quick thing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Before we begin 😌</h1>
+    <p class="sub">Type your name so I can ask you properly.</p>
+
+    <input id="nameInput" class="nameInput" type="text" placeholder="Enter your name" autocomplete="name" />
+
+    <div class="buttons">
+      <button id="continueBtn">Continue ❤️</button>
+    </div>
+
+    <p class="hint" id="nameHint"></p>
+  </div>
+
+  <script>
+    const continueBtn = document.getElementById("continueBtn");
+    const nameInput = document.getElementById("nameInput");
+    const nameHint = document.getElementById("nameHint");
+
+    function goNext() {
+      const name = (nameInput.value || "").trim();
+
+      if (!name) {
+        nameHint.textContent = "Please enter your name 😭";
+        nameInput.focus();
+        return;
+      }
+
+      localStorage.setItem("valentineName", name);
+      window.location.href = "valentine.html";
+    }
+
+    continueBtn.addEventListener("click", goNext);
+
+    nameInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") goNext();
+    });
+  </script>
+</body>
+</html>

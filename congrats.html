@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Congratulations</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="card">
+    <h1 id="congratsTitle">Congratulations!! 🎉💖</h1>
+    <p class="sub" id="congratsSub">You just made the best decision of the year.</p>
+
+    <div class="big">
+      <div class="emoji">💐🥰💘</div>
+      <p>See you on Valentine’s Day 😌</p>
+    </div>
+
+    <div class="buttons">
+      <a class="linkBtn" href="index.html">Do it again</a>
+    </div>
+  </div>
+
+  <script>
+    const name = localStorage.getItem("valentineName");
+    const safeName = name ? name.trim() : "";
+
+    if (safeName) {
+      document.getElementById("congratsTitle").textContent =
+        "Congratulations, " + safeName + "!! 🎉💖";
+    }
+
+    // small falling hearts
+    for (let i = 0; i < 18; i++) {
+      const h = document.createElement("div");
+      h.textContent = "💗";
+      h.style.position = "fixed";
+      h.style.left = (Math.random() * 100) + "vw";
+      h.style.top = "-20px";
+      h.style.fontSize = (16 + Math.random() * 22) + "px";
+      h.style.transition = "top 1.6s ease, opacity 1.6s ease, transform 1.6s ease";
+      h.style.pointerEvents = "none";
+      document.body.appendChild(h);
+
+      requestAnimationFrame(() => {
+        h.style.top = (70 + Math.random() * 30) + "vh";
+        h.style.opacity = "0";
+        h.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+      });
+
+      setTimeout(() => h.remove(), 1700);
+    }
+  </script>
+
+</body>
+</html>
